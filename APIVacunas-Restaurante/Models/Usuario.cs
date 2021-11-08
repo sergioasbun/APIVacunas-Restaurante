@@ -12,7 +12,6 @@ namespace APIVacunas_Restaurante.Models
         public string Carnet { get; set; }
         [Required]
         public string NombreCompleto { get; set; } 
-        [Required]
         public ICollection<Vacuna> Vacunas { get; set; }
     }
 }
