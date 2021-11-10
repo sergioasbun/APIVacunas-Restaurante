@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,7 +12,7 @@ namespace APIVacunas_Restaurante.Models
         [Key]
         public string Carnet { get; set; }
         [Required]
-        public string NombreCompleto { get; set; } 
+        public string NombreCompleto { get; set; }
         public ICollection<Vacuna> Vacunas { get; set; }
     }
 }

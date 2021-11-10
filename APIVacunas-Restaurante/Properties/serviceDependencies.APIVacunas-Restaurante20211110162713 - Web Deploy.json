@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "apis1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/APIVacunas-Restauranteapi/apis/APIVacunas-Restaurante",
+      "type": "apis.azure"
+    },
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/sergioasbundb/databases/AppRestaurante",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:DBAzure",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}

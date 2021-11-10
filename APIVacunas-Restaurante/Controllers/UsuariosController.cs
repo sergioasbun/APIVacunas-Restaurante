@@ -24,7 +24,12 @@ namespace APIVacunas_Restaurante.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Usuario>>> GetUsuario()
         {
-            return await _context.Usuario.ToListAsync();
+            List<Usuario> listaDeUsuarios = await _context.Usuario.ToListAsync();
+            foreach (Usuario usuario in listaDeUsuarios)
+            {
+                usuario.Vacunas = await _context.Vacuna.Where(vacuna => vacuna.Carnet == usuario.Carnet).ToListAsync();
+            }
+            return listaDeUsuarios;
         }
 
         // GET: api/Usuarios/5
@@ -37,7 +42,7 @@ namespace APIVacunas_Restaurante.Controllers
             {
                 return NotFound();
             }
-
+            usuario.Vacunas = await _context.Vacuna.Where(vacuna => vacuna.Carnet == usuario.Carnet).ToListAsync();
             return usuario;
         }
 
